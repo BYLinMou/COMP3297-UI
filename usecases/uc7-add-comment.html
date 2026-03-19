@@ -46,14 +46,35 @@
       <section class="card">
         <div class="field"><label>Defect ID</label><input placeholder="BT-RP-2471" /></div>
         <div class="field"><label>Author Role</label><select><option>Developer</option><option>Product Owner</option></select></div>
-        <div class="field"><label>Comment Text</label><textarea placeholder="Add lifecycle details or decision..."></textarea></div>
+        <div class="field"><label>Comment Text</label><textarea id="comment-text" placeholder="Add lifecycle details or decision..."></textarea></div>
         <div class="actions">
-          <button class="primary" data-status-target="uc7-status" data-message="Comment saved with author and timestamp.">Save Comment</button>
-          <button class="warn" data-status-target="uc7-status" data-message="Error: comment text is required." data-tone="error">Alt 1a: Empty Text</button>
-          <button class="warn" data-status-target="uc7-status" data-message="Operation cancelled. Draft comment discarded." data-tone="error">Alt 1b: Cancel</button>
+          <button id="save-comment-btn" class="primary">Save Comment</button>
+          <button id="cancel-comment-btn" class="warn">Alt 1b: Cancel</button>
         </div>
         <div id="uc7-status" class="status-box">Ready to attach comment.</div>
       </section>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const saveButton = document.getElementById("save-comment-btn");
+        const cancelButton = document.getElementById("cancel-comment-btn");
+        const commentField = document.getElementById("comment-text");
+        if (!saveButton || !cancelButton || !commentField) return;
+
+        saveButton.addEventListener("click", function () {
+          const commentText = commentField.value.trim();
+          if (!commentText) {
+            updateStatus("uc7-status", "Error: comment text is required.", "error");
+            return;
+          }
+          updateStatus("uc7-status", "Comment saved with author and timestamp.");
+        });
+
+        cancelButton.addEventListener("click", function () {
+          commentField.value = "";
+          updateStatus("uc7-status", "Operation cancelled. Draft comment discarded.", "error");
+        });
+      });
+    </script>
   </body>
 </html>
