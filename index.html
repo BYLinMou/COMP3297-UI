@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BetaTrax Use Case UI</title>
+    <title>BetaTrax Defect Board</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,61 +11,110 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
   </head>
   <body>
     <main class="layout">
       <header class="topbar">
         <div>
-          <div class="brand">BetaTrax Frontend Prototype</div>
-          <div class="sub">Static UI based on UseCaseTemplate_BetaTrax (2).pdf</div>
+          <div class="brand">BetaTrax Defects</div>
+          <div class="sub">Defect-style homepage for UC2-UC7 with direct form actions</div>
+        </div>
+        <div class="Defect-actions">
+          <a class="action-link primary" href="usecases/uc2-submit-defect.html">Add New Defect (UC2)</a>
+          <a class="action-link" href="usecases/uc1-register-product.html">Register Product (UC1)</a>
+          <a class="action-link" href="external-auth.html">External Auth</a>
         </div>
       </header>
 
       <section class="card hero">
-        <h1>Use Case Navigator</h1>
-        <p>
-          All seven use cases are implemented with basic-flow and alternative-flow mock interactions.
-          Backend is not implemented.
-        </p>
-        <span class="pill">UC1 external system included</span>
+        <h1>Defect List</h1>
+        <p>Click actions to jump to each use-case form. Status reflects the precondition gate of each UC.</p>
       </section>
 
-      <section class="grid">
-        <article class="card">
-          <h3>BT-UC1 Handle Product Registration</h3>
-          <p>Product Owner registers product and maps developers.</p>
-          <a href="usecases/uc1-register-product.html">Open UC1 page</a>
-          <div class="footer-link"><a href="external-auth.html">Open external auth system page</a></div>
+      <section class="toolbar">
+        <label for="Defect-filter">Filter by status:</label>
+        <select id="Defect-filter">
+          <option value="all">All statuses</option>
+          <option value="new">New</option>
+          <option value="open">Open</option>
+          <option value="assigned">Assigned</option>
+          <option value="fixed">Fixed</option>
+          <option value="resolved">Resolved</option>
+          <option value="reopened">Reopened</option>
+        </select>
+      </section>
+
+      <section class="Defect-list">
+        <article class="Defect-item" data-status="new">
+          <div class="Defect-head">
+            <span class="status-badge status-new">New</span>
+            <a class="Defect-title" href="usecases/uc3-evaluate-defect.html">#2471 App crashes after Save</a>
+          </div>
+          <div class="Defect-meta">Product PRD-1007 · Created by tester-008 · Ready for Product Owner evaluation (UC3)</div>
+          <div class="Defect-actions">
+            <a class="action-link primary" href="usecases/uc3-evaluate-defect.html">Evaluate (UC3)</a>
+            <a class="action-link" href="usecases/uc7-add-comment.html">Add Comment (UC7)</a>
+          </div>
         </article>
-        <article class="card">
-          <h3>BT-UC2 Submit Defect Report</h3>
-          <p>Beta Tester submits report via product UI.</p>
-          <a href="usecases/uc2-submit-defect.html">Open UC2 page</a>
+
+        <article class="Defect-item" data-status="open">
+          <div class="Defect-head">
+            <span class="status-badge status-open">Open</span>
+            <a class="Defect-title" href="usecases/uc4-take-defect.html">#2462 Login timeout in beta region</a>
+          </div>
+          <div class="Defect-meta">Accepted by Product Owner · No assignee yet · Ready for developer take-over (UC4)</div>
+          <div class="Defect-actions">
+            <a class="action-link primary" href="usecases/uc4-take-defect.html">Take Defect (UC4)</a>
+            <a class="action-link" href="usecases/uc7-add-comment.html">Add Comment (UC7)</a>
+          </div>
         </article>
-        <article class="card">
-          <h3>BT-UC3 Evaluate New Defect Report</h3>
-          <p>Product Owner accepts, rejects, or marks duplicate.</p>
-          <a href="usecases/uc3-evaluate-defect.html">Open UC3 page</a>
+
+        <article class="Defect-item" data-status="assigned">
+          <div class="Defect-head">
+            <span class="status-badge status-assigned">Assigned</span>
+            <a class="Defect-title" href="usecases/uc5-update-defect.html">#2440 Export CSV has wrong delimiter</a>
+          </div>
+          <div class="Defect-meta">Assignee dev-001 · Investigation in progress · Ready for Fixed/Cannot Reproduce (UC5)</div>
+          <div class="Defect-actions">
+            <a class="action-link primary" href="usecases/uc5-update-defect.html">Update Result (UC5)</a>
+            <a class="action-link" href="usecases/uc7-add-comment.html">Add Comment (UC7)</a>
+          </div>
         </article>
-        <article class="card">
-          <h3>BT-UC4 Developer View and Take Defect</h3>
-          <p>Developer claims an Open defect and status moves to Assigned.</p>
-          <a href="usecases/uc4-take-defect.html">Open UC4 page</a>
+
+        <article class="Defect-item" data-status="fixed">
+          <div class="Defect-head">
+            <span class="status-badge status-fixed">Fixed</span>
+            <a class="Defect-title" href="usecases/uc6-retest-defect.html">#2421 Search index not refreshed</a>
+          </div>
+          <div class="Defect-meta">Developer marked fixed · Waiting Product Owner retest (UC6)</div>
+          <div class="Defect-actions">
+            <a class="action-link primary" href="usecases/uc6-retest-defect.html">Retest (UC6)</a>
+            <a class="action-link" href="usecases/uc7-add-comment.html">Add Comment (UC7)</a>
+          </div>
         </article>
-        <article class="card">
-          <h3>BT-UC5 Developer Update as Fixed/Cannot Reproduce</h3>
-          <p>Assigned developer finalizes investigation result.</p>
-          <a href="usecases/uc5-update-defect.html">Open UC5 page</a>
+
+        <article class="Defect-item" data-status="resolved">
+          <div class="Defect-head">
+            <span class="status-badge status-resolved">Resolved</span>
+            <a class="Defect-title" href="usecases/uc7-add-comment.html">#2399 Notification email duplicate send</a>
+          </div>
+          <div class="Defect-meta">Retest passed · Closed outcome · Comment can still be added (UC7)</div>
+          <div class="Defect-actions">
+            <a class="action-link primary" href="usecases/uc7-add-comment.html">Add Comment (UC7)</a>
+          </div>
         </article>
-        <article class="card">
-          <h3>BT-UC6 Retest and Finalize</h3>
-          <p>Product Owner retests Fixed defect to resolve or reopen.</p>
-          <a href="usecases/uc6-retest-defect.html">Open UC6 page</a>
-        </article>
-        <article class="card">
-          <h3>BT-UC7 Add Comment to Defect Report</h3>
-          <p>Developer/Product Owner adds lifecycle comment and history.</p>
-          <a href="usecases/uc7-add-comment.html">Open UC7 page</a>
+
+        <article class="Defect-item" data-status="reopened">
+          <div class="Defect-head">
+            <span class="status-badge status-reopened">Reopened</span>
+            <a class="Defect-title" href="usecases/uc4-take-defect.html">#2388 Page freeze after modal close</a>
+          </div>
+          <div class="Defect-meta">Retest failed · Returned to backlog · Re-assign with UC4 then UC5</div>
+          <div class="Defect-actions">
+            <a class="action-link primary" href="usecases/uc4-take-defect.html">Re-take Defect (UC4)</a>
+            <a class="action-link" href="usecases/uc5-update-defect.html">Update After Rework (UC5)</a>
+          </div>
         </article>
       </section>
     </main>

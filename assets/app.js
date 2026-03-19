@@ -21,3 +21,21 @@ function wireDemoButtons() {
 }
 
 document.addEventListener("DOMContentLoaded", wireDemoButtons);
+
+function wireIssueFilter() {
+  const select = document.getElementById("Defect-filter");
+  if (!select) return;
+  select.addEventListener("change", function () {
+    const value = select.value;
+    const items = document.querySelectorAll(".Defect-item[data-status]");
+    items.forEach(function (item) {
+      if (value === "all" || item.getAttribute("data-status") === value) {
+        item.style.display = "grid";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", wireIssueFilter);
