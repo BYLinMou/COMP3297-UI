@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC2 Submit Defect Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC2 Submit Defect Report</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Tester enters product/version and defect details.</li>
+          <li>Beta Product UI submits to BetaTrax.</li>
+          <li>System validates fields and product existence.</li>
+          <li>System creates Report ID and sets status New.</li>
+          <li>System returns Report ID to product UI.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <h3>Defect Submission Form</h3>
+        <div class="field"><label>Product ID & Version</label><input placeholder="PRD-1007 / v1.4.3-beta" /></div>
+        <div class="field"><label>Title</label><input placeholder="App crashes after save action" /></div>
+        <div class="field"><label>Description / Steps</label><textarea placeholder="1. Open dashboard..."></textarea></div>
+        <div class="field"><label>Tester ID and Email</label><input placeholder="tester-008 / tester@demo.com" /></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc2-status" data-message="Report accepted. Report ID BT-RP-2471 generated with status New.">Submit Report</button>
+          <button class="warn" data-status-target="uc2-status" data-message="Submission rejected: unknown Product ID or invalid version." data-tone="error">Alt 3a: Unknown Product/Version</button>
+        </div>
+        <div id="uc2-status" class="status-box">Submission API response will appear here.</div>
+      </section>
+    </main>
+  </body>
+</html>

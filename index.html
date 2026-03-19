@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BetaTrax Use Case UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div>
+          <div class="brand">BetaTrax Frontend Prototype</div>
+          <div class="sub">Static UI based on UseCaseTemplate_BetaTrax (2).pdf</div>
+        </div>
+      </header>
+
+      <section class="card hero">
+        <h1>Use Case Navigator</h1>
+        <p>
+          All seven use cases are implemented with basic-flow and alternative-flow mock interactions.
+          Backend is not implemented.
+        </p>
+        <span class="pill">UC1 external system included</span>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>BT-UC1 Handle Product Registration</h3>
+          <p>Product Owner registers product and maps developers.</p>
+          <a href="usecases/uc1-register-product.html">Open UC1 page</a>
+          <div class="footer-link"><a href="external-auth.html">Open external auth system page</a></div>
+        </article>
+        <article class="card">
+          <h3>BT-UC2 Submit Defect Report</h3>
+          <p>Beta Tester submits report via product UI.</p>
+          <a href="usecases/uc2-submit-defect.html">Open UC2 page</a>
+        </article>
+        <article class="card">
+          <h3>BT-UC3 Evaluate New Defect Report</h3>
+          <p>Product Owner accepts, rejects, or marks duplicate.</p>
+          <a href="usecases/uc3-evaluate-defect.html">Open UC3 page</a>
+        </article>
+        <article class="card">
+          <h3>BT-UC4 Developer View and Take Defect</h3>
+          <p>Developer claims an Open defect and status moves to Assigned.</p>
+          <a href="usecases/uc4-take-defect.html">Open UC4 page</a>
+        </article>
+        <article class="card">
+          <h3>BT-UC5 Developer Update as Fixed/Cannot Reproduce</h3>
+          <p>Assigned developer finalizes investigation result.</p>
+          <a href="usecases/uc5-update-defect.html">Open UC5 page</a>
+        </article>
+        <article class="card">
+          <h3>BT-UC6 Retest and Finalize</h3>
+          <p>Product Owner retests Fixed defect to resolve or reopen.</p>
+          <a href="usecases/uc6-retest-defect.html">Open UC6 page</a>
+        </article>
+        <article class="card">
+          <h3>BT-UC7 Add Comment to Defect Report</h3>
+          <p>Developer/Product Owner adds lifecycle comment and history.</p>
+          <a href="usecases/uc7-add-comment.html">Open UC7 page</a>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

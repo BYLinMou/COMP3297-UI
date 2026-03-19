@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>External Authorization System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">External User Authorization System</div>
+        <a href="index.html">Back to home</a>
+      </header>
+
+      <section class="card hero">
+        <h1>Auth Gateway (for UC1/UC4/UC5/UC6/UC7)</h1>
+        <p>Mock external identity check used before protected operations in BetaTrax.</p>
+      </section>
+
+      <section class="card">
+        <div class="field">
+          <label>User ID</label>
+          <input type="text" placeholder="owner-001 / dev-001" />
+        </div>
+        <div class="field">
+          <label>Role</label>
+          <select>
+            <option>Product Owner</option>
+            <option>Developer</option>
+            <option>Tester</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button
+            class="primary"
+            data-status-target="auth-status"
+            data-message="Authentication successful. Token issued to BetaTrax."
+          >
+            Authenticate
+          </button>
+          <button
+            class="warn"
+            data-status-target="auth-status"
+            data-message="Authentication failed. Invalid credential or role mismatch."
+            data-tone="error"
+          >
+            Simulate Failure
+          </button>
+        </div>
+        <div id="auth-status" class="status-box">No authentication attempt yet.</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC1 Handle Product Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC1 Handle Product Registration</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="meta">
+        <article class="card"><h3>Primary Actor</h3><p>Product Owner</p></article>
+        <article class="card"><h3>Supporting</h3><p>User Authorization System</p></article>
+      </section>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Owner requests new registration and enters Product ID.</li>
+          <li>Owner provides developer list.</li>
+          <li>System validates unique Product ID and assignment constraints.</li>
+          <li>System creates product and owner/developer links.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <h3>Mock Form</h3>
+        <div class="field"><label>Product ID</label><input placeholder="PRD-1007" /></div>
+        <div class="field"><label>Product Name</label><input placeholder="BetaChat" /></div>
+        <div class="field"><label>Developer IDs (comma-separated)</label><input placeholder="dev-001, dev-003" /></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc1-status" data-message="Product created successfully. Owner and developers linked.">Submit Registration</button>
+          <button class="warn" data-status-target="uc1-status" data-message="Rejected: Product ID already exists." data-tone="error">Alt 3a: Duplicate Product ID</button>
+          <button class="warn" data-status-target="uc1-status" data-message="Rejected: Owner/Developer already assigned to another product." data-tone="error">Alt 3b: Assignment Conflict</button>
+        </div>
+        <div id="uc1-status" class="status-box">Ready for registration submission.</div>
+      </section>
+      <section class="card">
+        <h3>Preconditions</h3>
+        <p>Owner authenticated, product not already registered, and selected developers are valid and unassigned.</p>
+        <p class="footer-link"><a href="../external-auth.html">Open external authorization system</a></p>
+      </section>
+    </main>
+  </body>
+</html>

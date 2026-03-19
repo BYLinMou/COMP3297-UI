@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC6 Retest and Finalize Outcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC6 Retest Defect and Finalize</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Product Owner opens Fixed defect report.</li>
+          <li>Retests based on reproduction steps and update notes.</li>
+          <li>If successful, sets status to Resolved.</li>
+          <li>System stores status/timestamp and sends tester email.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <div class="field"><label>Defect ID</label><input placeholder="BT-RP-2471" /></div>
+        <div class="field"><label>Retest Note</label><textarea placeholder="Validation result..."></textarea></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc6-status" data-message="Retest passed. Status changed to Resolved and notification sent.">Set Resolved</button>
+          <button class="warn" data-status-target="uc6-status" data-message="Retest failed. Status changed to Reopened for backlog rework." data-tone="error">Alt 3a: Reopen</button>
+        </div>
+        <div id="uc6-status" class="status-box">Retest outcome not set.</div>
+      </section>
+    </main>
+  </body>
+</html>

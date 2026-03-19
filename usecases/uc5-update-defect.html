@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC5 Developer Update Defect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC5 Update as Fixed / Cannot Reproduce</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Assigned developer opens defect report.</li>
+          <li>Developer investigates and reproduces issue.</li>
+          <li>Developer applies correction.</li>
+          <li>Developer updates status to Fixed.</li>
+          <li>System stores timestamp and notifies tester.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <div class="field"><label>Defect ID</label><input placeholder="BT-RP-2471" /></div>
+        <div class="field"><label>Fix Note</label><textarea placeholder="Root cause and patch summary..."></textarea></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc5-status" data-message="Status updated to Fixed. Audit history and notification recorded.">Set Fixed</button>
+          <button class="warn" data-status-target="uc5-status" data-message="Status updated to Cannot Reproduce. Audit history and notification recorded." data-tone="error">Alt 3a: Cannot Reproduce</button>
+        </div>
+        <div id="uc5-status" class="status-box">Waiting for developer decision.</div>
+      </section>
+    </main>
+  </body>
+</html>

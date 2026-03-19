@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC7 Add Comment to Defect Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC7 Add Comment to Defect Report</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Developer or Product Owner inputs comment text.</li>
+          <li>System attaches comment to defect report.</li>
+          <li>System stores text, author identity, and date/time.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <div class="field"><label>Defect ID</label><input placeholder="BT-RP-2471" /></div>
+        <div class="field"><label>Author Role</label><select><option>Developer</option><option>Product Owner</option></select></div>
+        <div class="field"><label>Comment Text</label><textarea placeholder="Add lifecycle details or decision..."></textarea></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc7-status" data-message="Comment saved with author and timestamp.">Save Comment</button>
+          <button class="warn" data-status-target="uc7-status" data-message="Error: comment text is required." data-tone="error">Alt 1a: Empty Text</button>
+          <button class="warn" data-status-target="uc7-status" data-message="Operation cancelled. Draft comment discarded." data-tone="error">Alt 1b: Cancel</button>
+        </div>
+        <div id="uc7-status" class="status-box">Ready to attach comment.</div>
+      </section>
+    </main>
+  </body>
+</html>

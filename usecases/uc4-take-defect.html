@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC4 Developer View and Take Defect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC4 Developer View and Take Defect</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Developer opens Open defect details.</li>
+          <li>Developer takes ownership.</li>
+          <li>System records assignee and assignment time.</li>
+          <li>Status changes from Open to Assigned.</li>
+          <li>Tester notification is sent if email exists.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <div class="field"><label>Defect ID</label><input placeholder="BT-RP-2471" /></div>
+        <div class="field"><label>Developer ID</label><input placeholder="dev-001" /></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc4-status" data-message="Ownership accepted. Status updated to Assigned with audit trail.">Take Ownership</button>
+          <button class="warn" data-status-target="uc4-status" data-message="Ownership cancelled. Defect remains Open with no assignee." data-tone="error">Alt 3a: Cancel</button>
+        </div>
+        <div id="uc4-status" class="status-box">Assignee action not started.</div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT-UC3 Evaluate New Defect Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script defer src="../assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">BT-UC3 Evaluate New Defect Report</div>
+        <a href="../index.html">Back to home</a>
+      </header>
+      <section class="card">
+        <h3>Basic Flow</h3>
+        <ol class="flow">
+          <li>Product Owner opens list of New reports.</li>
+          <li>Selects one report and chooses Accept.</li>
+          <li>Enters severity, priority, and backlog reference.</li>
+          <li>System sets status to Open and stores decision timestamp.</li>
+          <li>System notifies tester by email if provided.</li>
+        </ol>
+      </section>
+      <section class="card">
+        <div class="field"><label>Report ID</label><input placeholder="BT-RP-2471" /></div>
+        <div class="field"><label>Severity / Priority</label><input placeholder="High / P1" /></div>
+        <div class="field"><label>Backlog Reference</label><input placeholder="JIRA-BETA-249" /></div>
+        <div class="actions">
+          <button class="primary" data-status-target="uc3-status" data-message="Accepted. Status changed to Open and backlog reference recorded.">Accept (Open)</button>
+          <button class="warn" data-status-target="uc3-status" data-message="Rejected. Status changed to Rejected and tester notified." data-tone="error">Alt 3a: Reject</button>
+          <button class="warn" data-status-target="uc3-status" data-message="Marked Duplicate. Linked to existing report and tester notified." data-tone="error">Alt 3b: Duplicate</button>
+        </div>
+        <div id="uc3-status" class="status-box">Evaluation result is pending.</div>
+      </section>
+    </main>
+  </body>
+</html>
