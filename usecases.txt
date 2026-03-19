@@ -33,7 +33,7 @@ Short Use Case Template for COMP3297: BetaTrax.
 
    UC ID and Name:    BT-UC2 Submit Defect Report
      Primary Actor:   Beta Tester                 Supporting Actors: Beta UI, Email Service
-           Trigger:   Tester report a defect from the beta product UI after encountering an issue.
+           Trigger:   Tester report a defect from the beta product UI after encountering an Defect.
         Description:  A tester submits a defect report for a specific product and beta version.
                       BetaTrax assigns it an ID, sets the status to New, and stores it for Product
                       Owner evaluation.
@@ -122,7 +122,7 @@ UC ID and Name: BT-UC5 Developer Update Defect as Fixed or Cannot Reproduce
                    fix, or cannot reproduce the reported defect.
       Description: The assigned developer updates the defect report after investigation. If a
                    correction is implemented, the developer marks the defect as Fixed. If the
-                   developer cannot reproduce the issue, the developer marks it as Cannot
+                   developer cannot reproduce the Defect, the developer marks it as Cannot
                    reproduce. BetaTrax records the status change and notifies the tester by email if
                    applicable.
     Preconditions: 1. PRE-1: The defect report exists and its status is Assigned.

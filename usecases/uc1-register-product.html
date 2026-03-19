@@ -41,6 +41,11 @@
         <article class="card"><h3>Supporting</h3><p>User Authorization System</p></article>
       </section>
       <section class="card">
+        <h3>Preconditions</h3>
+        <p>Owner authenticated, product not already registered, and selected developers are valid and unassigned.</p>
+        <p class="footer-link"><a href="../external-auth.html">Open external authorization system</a></p>
+      </section>
+      <section class="card">
         <h3>Basic Flow</h3>
         <ol class="flow">
           <li>Owner requests new registration and enters Product ID.</li>
@@ -51,12 +56,9 @@
       </section>
       <section class="card">
         <h3>Mock Form</h3>
-        <div class="field">
-          <label>Defect Description - N/A (Read-only)</label>
-          <div class="readonly-display">No defect exists in UC1. This use case is product registration only.</div>
-        </div>
         <div class="field"><label>Product ID</label><input placeholder="PRD-1007" /></div>
         <div class="field"><label>Product Name</label><input placeholder="BetaChat" /></div>
+        <div class="field"><label>Project Owner ID</label><input placeholder="owner-001" /></div>
         <div class="field"><label>Developer IDs (comma-separated)</label><input placeholder="dev-001, dev-003" /></div>
         <div class="actions">
           <button class="primary" data-status-target="uc1-status" data-message="Product created successfully. Owner and developers linked.">Submit Registration</button>
@@ -64,11 +66,6 @@
           <button class="warn" data-status-target="uc1-status" data-message="Rejected: Owner/Developer already assigned to another product." data-tone="error">Alt 3b: Assignment Conflict</button>
         </div>
         <div id="uc1-status" class="status-box">Ready for registration submission.</div>
-      </section>
-      <section class="card">
-        <h3>Preconditions</h3>
-        <p>Owner authenticated, product not already registered, and selected developers are valid and unassigned.</p>
-        <p class="footer-link"><a href="../external-auth.html">Open external authorization system</a></p>
       </section>
     </main>
   </body>
