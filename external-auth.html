@@ -31,25 +31,21 @@
           <input type="text" placeholder="owner-001 / dev-001" />
         </div>
         <div class="field">
-          <label>Role</label>
-          <select>
-            <option>Product Owner</option>
-            <option>Developer</option>
-            <option>Tester</option>
-          </select>
+          <label>Password</label>
+          <input type="password" placeholder="Enter password" />
         </div>
         <div class="actions">
           <button
             class="primary"
             data-status-target="auth-status"
-            data-message="Authentication successful. Token issued to BetaTrax."
+            data-message="Authentication successful. Log in as [developer/product manager] of [productID]."
           >
             Authenticate
           </button>
           <button
             class="warn"
             data-status-target="auth-status"
-            data-message="Authentication failed. Invalid credential or role mismatch."
+            data-message="Authentication failed. Invalid user ID or password."
             data-tone="error"
           >
             Simulate Failure
