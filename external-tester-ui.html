@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>External Beta Tester UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="topbar">
+        <div class="brand">External Beta Tester UI</div>
+        <a href="index.html">Back to home</a>
+      </header>
+
+      <section class="card hero">
+        <h1>UC2 External Entry</h1>
+        <p>Tester reports defects from beta product UI before data reaches BetaTrax.</p>
+      </section>
+
+      <section class="card">
+        <h3>Current Status and Preconditions</h3>
+        <p>
+          Defect Status:
+          <span class="status-badge">Draft in Beta UI</span>
+          <span class="sub">Target after submission:</span>
+          <span class="status-badge status-new">New in BetaTrax</span>
+        </p>
+        <ul class="precheck">
+          <li>Tester has valid Tester ID.</li>
+          <li>Product is registered in BetaTrax.</li>
+          <li>Beta UI can call BetaTrax API.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Tester Submission (External)</h3>
+        <div class="field"><label>Tester ID</label><input placeholder="tester-008" /></div>
+        <div class="field"><label>Product ID / Version</label><input placeholder="PRD-1007 / v1.4.3-beta" /></div>
+        <div class="field"><label>Defect Title</label><input placeholder="App crashes after save action" /></div>
+        <div class="field"><label>Steps to reproduce</label><textarea placeholder="1. Open dashboard..."></textarea></div>
+        <div class="actions">
+          <button class="primary" data-status-target="external-tester-status" data-message="Submitted to BetaTrax API. Report created with status New.">Submit to BetaTrax</button>
+          <button class="warn" data-status-target="external-tester-status" data-message="Submission failed. Invalid product/version from external UI." data-tone="error">Simulate Product/Version Error</button>
+          <a class="action-link" href="usecases/uc2-submit-defect.html">Open Internal UC2 Form</a>
+        </div>
+        <div id="external-tester-status" class="status-box">Waiting for tester action.</div>
+      </section>
+    </main>
+  </body>
+</html>
