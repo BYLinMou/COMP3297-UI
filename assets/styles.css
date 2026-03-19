@@ -322,6 +322,20 @@ textarea {
   margin-bottom: 6px;
 }
 
+.readonly-display {
+  width: 100%;
+  border: 1px dashed #cfd6ce;
+  border-radius: 9px;
+  padding: 10px;
+  background: #f2f4f1;
+  color: #505a50;
+}
+
+.field-hint {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 @keyframes rise-in {
   from {
     transform: translateY(8px);
